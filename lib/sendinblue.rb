@@ -348,6 +348,17 @@ module Sendinblue
 			id = data['id'].to_s
 			return self.delete("list/" + id + "/delusers",data.to_json)
 		end
+			
+                # Get Users from lists
+	        # @options data {Array} listids: Ids of lists to return users [Mandatory]
+		# @options data {String} timestamp: Desired name of the list to be modified [Optional]
+		# @options data {Integer} page: Page number
+           	# @options data {Integer} page_limit: Results per page
+			
+		# No input required
+		def display_list_users(data)
+			return self.get("list/display",data.to_json)
+		end
 
 		# Send Transactional Email.
 		# @param {Array} data contains php array with key value pair.
